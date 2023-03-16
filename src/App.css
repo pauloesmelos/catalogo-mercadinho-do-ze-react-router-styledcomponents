@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.App{
+    /*colocando o footer no final da página*/
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh + 30rem);
+}
+.corpo{
+    /*colocando o footer no final da página*/
+    flex: 1;
+}
+img{
+    border-radius: 10px;
+}
+
+/*animacao loading*/
+.loading{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 7px solid #ccc;
+    border-right-color: transparent;
+    animation: .4s loading infinite;
+    margin: 10rem auto;
+}
+@keyframes loading {
+    to{
+        transform: rotate(360deg);
+    }
+}
+.left{
+    animation: .3s left forwards;
+}
+@keyframes left {
+    from{
+        transform: translate3d(-7rem,0,0);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0,0,0);
+        opacity: 1;
+    }
+}
+.top{
+    animation: .4s top forwards;
+}
+@keyframes top {
+    from{
+        transform: translate3d(0,-7rem,0);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0,0,0);
+        opacity: 1;
+    }
+}
+/*tooltip*/
+.tooltip{
+    padding: 2rem;
+    background-color: #222;
+    box-shadow: .1rem .1rem .5rem .2rem #555;
+    color: #fff;
+    font-weight: bolder;
+    position: absolute;
+    margin: 0;
+}
+.tooltip::after{
+    display: inline-block;
+    position: absolute;
+    content: '';
+    border-bottom: 15px solid transparent;
+    border-top: 15px solid transparent;
+    border-left: 25px solid #222;
+    margin: 0;
+    right: -1.3rem;
+}
+
+@media(max-width: 650px){
+    .tooltip{
+        padding: 1rem;
+    }
+}
