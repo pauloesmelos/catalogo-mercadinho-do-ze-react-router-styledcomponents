@@ -67,7 +67,7 @@ const Footer = ({text}) => {
                 <Paragraph><Link  content='Trabalhe conosco' href='#'></Link></Paragraph>
                 <Paragraph><Link  content='Central de ajuda' href='#'></Link></Paragraph>
                 <Paragraph><Link content='Unidade Alfenas' href='#'></Link></Paragraph>
-                <Paragraph><Link content='Unidade São Paulo' href='#'></Link></Paragraph>
+                <Paragraph><Link content='Repositório Github' href='https://github.com/pauloesmelos/catalogo-mercadinho-do-ze-react-router-styledcomponents'></Link></Paragraph>
             </DivLinks>
             <DivLinks>
                 <Subtitle>Já baixou o aplicativo ?</Subtitle>
@@ -76,7 +76,7 @@ const Footer = ({text}) => {
         </Links>
         <About>
             <Hr></Hr>
-            <Text>{text}</Text>
+            <Text>{text} </Text>
         </About>
     </FooterStyle>
   )
