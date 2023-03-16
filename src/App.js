@@ -7,6 +7,7 @@ import Home from './Home';
 import Produto from './Produto';
 import Sobre from './Sobre';
 import React from 'react';
+import Modal from './Components/Modal';
 
 const App = () => {
   
@@ -23,6 +24,7 @@ const App = () => {
           </Routes>
         </div>
         <Footer text="&copy; 2023 - Todos os direitos reservados - ALFENAS MG - MERCADINHO DO ZÉ LTDA - CNPJ: 12.657.111/00008" />
+        <Modal />
       </BrowserRouter>
     </div>
   );

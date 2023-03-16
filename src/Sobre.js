@@ -46,6 +46,11 @@ const ContainerData = styled.div`
 const ContainerVendas = styled.div`
   display: grid;
   grid-template-columns: repeat(3,1fr);
+
+  @media (max-width: ${smartphone}) {
+    grid-template-columns: repeat(2, 25%);
+    gap: 5.5rem;
+  }
 `;
 
 const Imagem = styled.img`

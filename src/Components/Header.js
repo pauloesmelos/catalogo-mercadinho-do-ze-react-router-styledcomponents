@@ -15,7 +15,7 @@ const Nav = style.nav`
     width: 100%;
     position: fixed;
     z-index: 100;
-    box-shadow: .1rem .1rem .3rem .1rem #a9c0c0;
+    box-shadow: ${({boxShadow}) => boxShadow ? '.1rem .1rem .3rem .1rem #a9c0c0' : 'none'};
 
     @media(max-width: ${smartphone}){
        display: ${({activeMenuMobile}) => activeMenuMobile ? 'block' : 'flex'};
@@ -25,9 +25,11 @@ const Nav = style.nav`
     @keyframes showNav {
         from{
             opacity: .3;
+            max-height: 0;
         }
         to{
             opacity: 1;
+            max-height: 23rem;
         }
     }
 `;
@@ -61,7 +63,7 @@ const Ul = style.ul`
     @keyframes showUl{
         from {
             opacity: 0;
-            transform: translateX(-1rem);
+            transform: translateY(-10rem);
         }
         to {
             opacity: 1;
@@ -83,29 +85,36 @@ const NavLinkStyle = style(NavLink)`
     color: #fff;
     font-weight: bolder;
     font-size: 1.1rem;
+    font-family: Arial;
 
     &.active{
         padding: .5rem;
-        border-radius: 10px;
-        color: #fff;
-        background-color: #444;
+        font-weight: lighter;
+        border-radius: 5px;
+        color: rgb(255, 204, 0);
+        background-color: #fff;
     }
 `;    
 const Header = ({text}) => {
     const [showMenu,setShowMenu] = React.useState(false);
     const [activeMenuMobile,setActiveMenuMobile] = React.useState(false);
-
+    const [boxShadow,setBoxShadow] = React.useState(false);
+    
+    const handleScroll = () => {
+        window.scrollY > 50 ? setBoxShadow(true) : setBoxShadow(false);
+    }
     React.useEffect(() => {
+        window.addEventListener('scroll',handleScroll);//verifica se scroll é 0 , se não for add box-shadow
         const tela = window.innerWidth;
         if(tela <= +smartphone.replace('px',''))
             setShowMenu(true);
     },[]); 
     React.useEffect(() => {
-        console.log(activeMenuMobile);
+    
     },[activeMenuMobile]);
   return (
     <>
-        <Nav activeMenuMobile={activeMenuMobile}>
+        <Nav activeMenuMobile={activeMenuMobile} boxShadow={boxShadow}>
             <ContainerLogo>
                 <LogoSvg />
                 <LogoTexto>{text}</LogoTexto>

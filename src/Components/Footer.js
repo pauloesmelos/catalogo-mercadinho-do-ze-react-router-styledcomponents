@@ -42,6 +42,7 @@ const Imagem = styled.img`
     width: ${props => props.width};
     height: ${props => props.height};
     background-size: cover;
+    margin-top: 2rem;
     cursor: pointer;
     &:hover{
         filter: invert(100);
@@ -63,8 +64,8 @@ const Footer = ({text}) => {
             </DivLinks>
             <DivLinks>
                 <Subtitle>Sobre o Mercadinho do Zé</Subtitle>
-                <Paragraph><Link content='Trabalhe conosco' href='#'></Link></Paragraph>
-                <Paragraph><Link content='Central de ajuda' href='#'></Link></Paragraph>
+                <Paragraph><Link  content='Trabalhe conosco' href='#'></Link></Paragraph>
+                <Paragraph><Link  content='Central de ajuda' href='#'></Link></Paragraph>
                 <Paragraph><Link content='Unidade Alfenas' href='#'></Link></Paragraph>
                 <Paragraph><Link content='Unidade São Paulo' href='#'></Link></Paragraph>
             </DivLinks>
