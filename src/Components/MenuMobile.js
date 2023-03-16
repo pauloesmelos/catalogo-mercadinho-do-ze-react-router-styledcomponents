@@ -21,7 +21,7 @@ const MenuMobile = ({show,setActiveMenuMobile}) => {
     };
   return (
     <>
-        <Menu src={menu} alt='menu' show={show} onTouchStart={handleClick} onClick={handleClick} setActiveMenuMobile={setActiveMenuMobile}></Menu>
+        <Menu src={menu} alt='menu' show={show} onClick={handleClick} setActiveMenuMobile={setActiveMenuMobile}></Menu>
     </>
   )
 }
