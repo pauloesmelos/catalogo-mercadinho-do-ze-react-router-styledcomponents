@@ -1,6 +1,8 @@
 import React, { useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import styled, { keyframes } from 'styled-components';
+import ButtonComprar from './Components/ButtonComprar';
+import Carrinho from './Components/Carrinho';
 import { smartphone } from './Components/Header';
 import { goTop } from './Home';
 
@@ -104,8 +106,8 @@ const Dt = styled.dt`
   &.ativo::after{/*seta estilo no after caso o Dt tenha a classe .ativo */
     animation: .3s ${rotate} forwards;
   }
-
 `;
+
 const Produto = () => {
 
   //console.log(document.querySelector('.sc-jdHJyC'));
@@ -181,6 +183,8 @@ const Produto = () => {
             </Dd>
           </Dl>
         </DivDl>
+        <Carrinho id={id} />
+        <ButtonComprar marginTop={"3rem"} text={"Comprar"} />
       </DivProduct>
     </Container>
   )
